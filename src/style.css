@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Karla', sans-serif;
+}
+:root {
+  --bgColorTransition: background-color 0.2s;
+  --colorTransition: color 0.2s;
+  --mainColor: #2B283A;
+}
+body {
+  background-color: #484a5a;
+  padding: 50px 0;
+}
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.tenziesApp.dark {
+  background-color: #21222A;
+}
+.tenziesApp {
+  height: 550px;
+  max-width: 500px;
+  background-color: #f5f5ff;
+  border-radius: 20px;
+  padding: 10px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 0px 10px 20px 10px rgb(0 0 0 / 15%);
+}
+.tenziesApp.dark,
+.tenziesApp {
+  transition: var(--bgColorTransition);
+}
+.toggler {
+  display: flex;
+  align-items: center;
+}
+
+.toggler p {
+  font-size: 0.625rem;
+  font-weight: 600;
+}
+
+.toggler--slider {
+  width: 25px;
+  height: 13px;
+  background-color: var(--mainColor);
+  border-radius: 2rem;
+  margin-inline: 7px;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid #000;
+  box-sizing: content-box;
+}
+
+.tenziesApp.dark .toggler--slider {
+  border-color: #fff;
+  background-color: #F5F5F5;
+}
+
+.toggler--slider--circle {
+  height: 13px;
+  width: 13px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.tenziesApp.dark .toggler--slider--circle {
+  background-color: black;
+}
+
+.toggler--light {
+  color: var(--mainColor);
+}
+
+.tenziesApp.dark .toggler--light {
+  color: #918E9B;
+}
+
+.toggler--dark {
+  color: #D5D4D8;
+}
+
+.tenziesApp.dark .toggler-dark {
+  color: #fff;
+}
+
+.tenziesApp.dark .toggler--slider {
+  justify-content: flex-end;
+}
+.title {
+  font-size: 2.5rem;
+  color: var(--mainColor);
+}
+.title.dark {
+  color: #F5F5F5;
+}
+.instructions {
+  color: #4A4E74;
+  letter-spacing: -0.03em;
+  font-size: 1.4rem;
+  line-height: 22px;
+  margin: 10px 0 10px 0;
+}
+.winningText.dark,
+.instructions.dark {
+  color: #abaecc;
+}
+.title.dark,
+.title,
+.instructions.dark,
+.instructions {
+  transition: var(--colorTransition);
+}
+.cardsContainer {
+  display: grid;
+  grid-template: auto auto / repeat(5, 1fr);
+  gap: 20px;
+  margin: 10px 0 10px 0;
+}
+.card {
+  width: 50px;
+  height: 50px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.card,
+.card.dark {
+  transition: box-shadow 0.2s, var(--bgColorTransition);
+}
+
+.card:hover,
+.card.dark:hover {
+  box-shadow: 0px 0px 8px #59e391;
+}
+.card.dark {
+  box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.4);
+}
+.card-number {
+  color: var(--mainColor);
+  font-size: 1.4rem;
+}
+
+.rollCards {
+  height: 50px;
+  width: 150px;
+  border: none;
+  border-radius: 6px;
+  background-color: #5035FF;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: var(--bgColorTransition);
+}
+.rollCards:hover {
+  background-color: #6149ff;
+}
+.rollCards:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+.winningText {
+  font-size: 2rem;
+  color: var(--mainColor);
+}
+
+.modeSelections {
+  display: flex;
+  justify-content: space-evenly;
+  width: 300px;
+}
+.modeSelections button {
+  font-size: 1rem;
+  width: 80px;
+  height: 30px;
+}
+@media only screen and (max-width: 600px) {
+  .tenziesApp {
+    width: 400px;
+    height: 500px;
+  }
+  .instructions {
+    font-size: 1.1rem;
+    line-height: 18px;
+  }
+  .cardsContainer {
+    gap: 10px;
+  }
+  .winningText {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .tenziesApp {
+    width: 300px;
+  }
+  .card {
+    width: 40px;
+    height: 40px;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .card-number {
+    font-size: 1.2rem;
+  }
+  .winningText {
+    font-size: 1rem;
+  }
+}
+/* it's only for Galaxy Fold -__- */
+@media only screen and (max-width: 350px) {
+  .tenziesApp {
+    width: 250px;
+    padding: 10px 35px;
+  }
+  .cardsContainer {
+    gap: 5px;
+  }
+  .modeSelections {
+    width: 250px;
+  }
+}
